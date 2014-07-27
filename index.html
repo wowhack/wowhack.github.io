@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard | Spotify Way Out West Hackathon 2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:700,900|Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body class="slide-container">
+
+    <aside role="complementary" class="slide-menu">
+      <h2>Handy links</h2>
+
+      <dl>
+        <dt>Event email</dt>
+        <dd><a href="mailto:wowhack@spotify.com">wowhack@spotify.com</a></dd>
+        <dt>GitHub</dt>
+        <dd><a href="http://github.com/wowhack">github.com/wowhack</a></dd>
+      </dl>
+    </aside>
+
+    <div class="slide-pusher">
+      <div class="slide-content wrapper">
+        <header role="banner">
+          <div class="grid grid--middle">
+            <div class="grid__item one-quarter">
+              <button id="toggle-menu" class="icon">☰</button>
+              <a target="_blank" title="#wowhack2014" href="https://twitter.com/search?q=%23wowhack2014">
+                <img src="images/wowhack.svg" alt="#wowhack2014" width="185" />
+              </a>
+            </div><!--
+            --><div class="grid__item one-half">
+              <h1>Dashboard</h1>
+            </div><!--
+            --><div class="grid__item one-quarter">
+              <a target="_blank" title="Spotify" href="http://spotify.com">
+                <img src="images/spotify.svg" alt="Spotify" width="127" />
+              </a>
+            </div>
+          </div>
+
+          <div rel="tooltip" title="Time left for hacking" class="track">
+            <div id="counter" class="thumb"></div>
+            <time title="Time left for hacking" id="timeleft" class="indicator"></time>
+          </div>
+        </header>
+
+        <main role="main" class="grid">
+
+          <aside class="grid__item one-quarter">
+            <section>
+              <h1>Checklist</h1>
+
+              <ul class="checklist">
+                <li>Check in</li>
+                <li>Have admin create GitHub team</li>
+                <li>Invite team members</li>
+                <li>Create private repo</li>
+                <li>Write codes</li>
+              </ul>
+            </section>
+
+            <section>
+              <h1>Schedule</h1>
+
+            </section>
+          </aside><!--
+
+          --><section class="grid__item one-half">
+            <h1>Notices</h1>
+
+            <article role="article">
+              <h2>Heading</h2>
+              <time class="badge" pubdate>17:38</time>
+
+              <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            </article>
+
+            <article role="article">
+              <h2>Heading</h2>
+              <time class="badge" pubdate>17:38</time>
+
+              <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            </article>
+          </section><!--
+
+          --><section class="grid__item one-quarter">
+            <h1>Latest commits</h1>
+            <ul id="commits" class="list"></ul>
+          </section>
+
+        </main>
+      </div>
+    </div>
+
+    <script id="commit-template" type="text/html">
+      <li>
+        <p class="message"><kbd>{message}</kbd></p>
+        <p class="meta">By <strong class="committer">{by}</strong> from the <strong class="team">{team}</strong> team <time datetime="{timestamp}" title="{timestamp}" pubdate>{date}</time></p>
+      </li>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+    <script src="vendor/countdown.min.js"></script>
+    <script src="scripts/tooltips.js"></script>
+    <script src="scripts/sidebar-controller.js"></script>
+    <script src="modules/commits.js"></script>
+    <script src="modules/countdown.js"></script>
+  </body>
+</html>

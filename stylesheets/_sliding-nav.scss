@@ -1,0 +1,45 @@
+/* Sliding nav */
+$sidebar-width: 300px;
+$sidebar-transition: .5s;
+
+.slide-container {
+  perspective: 1500px;
+  perspective-origin: 0% 50%;
+  position: relative;
+  height: 100%;
+}
+
+.slide-content {
+  height: 100%;
+}
+
+.slide-pusher,
+.slide-menu {
+  transition: all $sidebar-transition;
+  transform-style: preserve-3d;
+}
+
+.slide-pusher {
+  position: relative;
+  z-index: 99;
+  height: 100%;
+}
+.slide-menu {
+  transform: translate3d(-50%, 0, 0);
+  transform-origin: 100% 50%;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100%;
+}
+.slide-open {
+  .slide-pusher {
+    transform: translate3d($sidebar-width, 0, 0);
+  }
+  .slide-menu {
+    transform: translate3d(0, 0, 0);
+  }
+}

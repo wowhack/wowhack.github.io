@@ -1,0 +1,11 @@
+@function to_em($target, $base-size: $font-size) {
+  @return $target / $base-size * 1em;
+}
+
+@mixin truncate($maxlength: 100px) {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: $maxlength;
+}

@@ -1,0 +1,316 @@
+@import "animations";
+@import "grid";
+@import "utils";
+@import "icons";
+@import "sliding-nav";
+
+$background: #E00070;
+$text-color: #fff;
+$leading: 1.6;
+
+$font-size: 18;
+$lineheight: (($leading * $font-size) / 16) * 1em;
+
+$sans: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+
+/* the #fuckitreset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #fff;
+  color: $background;
+}
+::-moz-selection {
+  background-color: #fff;
+  color: $background;
+}
+
+
+html {
+  background: $background;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font: 600 #{($font-size / 16) * 1em}/#{$leading} $sans;
+}
+
+// this is the main wrapper due to the sliding nav.
+// don't apply padding and stuff to body or html elements.
+.wrapper {
+  background-color: $background;
+  padding: 1% 3% $lineheight;
+}
+
+aside > section {
+  margin-bottom: $lineheight;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+p {
+  margin: 0 0 $lineheight / 4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: to_em(20);
+}
+
+h2 {
+  font-size: to_em(16);
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+}
+
+[role="banner"] {
+  padding: $lineheight / 2 0 0;
+  margin-bottom: $lineheight / 2;
+
+  h1 {
+    font-size: to_em(24);
+    text-align: center;
+    letter-spacing: 15px;
+    font-weight: 600;
+  }
+
+  .grid__item:first-child {
+    a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .grid__item:last-child {
+    a {
+      display: block;
+      text-align: right;
+    }
+
+    img {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+
+  a {
+    border: 0;
+  }
+}
+
+[role="complementary"] {
+
+}
+
+#toggle-menu {
+  -webkit-appearance: none;
+  border: 1px solid rgba(#fff, .5);
+  background: none;
+  color: rgba(#fff, .9);
+  font-size: 50px;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  border-radius: 5px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  &:active, &:focus {
+    outline: 0;
+  }
+
+  &:active,
+  &.active {
+    background-color: #fff;
+    color: darken($background, 5%);
+  }
+}
+
+dt {
+  font-weight: normal;
+}
+dd {
+  margin-bottom: $lineheight / 4;
+}
+
+section > h1 {
+  border-bottom: 2px solid rgba(#fff, .5);
+  margin-bottom: $lineheight / 2;
+}
+
+[role="article"] {
+  position: relative;
+  margin-bottom: $lineheight;
+
+  time[pubdate] {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .content {
+    font-size: to_em(16);
+  }
+}
+
+.list {
+  list-style: none;
+}
+
+.badge {
+  background-color: #fff;
+  color: darken($background, 10%);
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(#fff, .6);
+  color: #fff;
+  position: relative;
+  transition: border-color .2s;
+
+  &:active {
+    top: 1px;
+  }
+  &:hover {
+    border-color: #fff;
+  }
+}
+
+time {
+  cursor: default;
+}
+
+.bubble {
+  @extend .badge;
+  border-radius: 100%;
+}
+
+.tooltip {
+  opacity: 0;
+  background-color: #fff;
+  color: darken($background, 10%);
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: all .1s ease-out;
+  transform: translate(0, -5px);
+  font-size: to_em(16);
+  box-shadow: rbga(0,0,0, .8) 0 3px 4px;
+
+  &::after {
+    $size: 6px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: $size solid #fff;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    left: calc(50% - #{$size});
+    bottom: -$size * 2;
+  }
+
+  &.active {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.checklist {
+  list-style: none;
+  font-size: .9em;
+
+  li::before {
+    @include icon('✓');
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+  }
+}
+
+#commits li {
+  -webkit-animation: animation 1000ms linear both;
+  animation: animation 1000ms linear both;
+  margin-bottom: $lineheight / 2;
+  font-size: .9em;
+
+  p {
+    margin: 0;
+  }
+
+  .meta {
+    font-size: .8em;
+    font-weight: normal;
+  }
+
+  time {
+    font-weight: 600;
+  }
+
+  .message {
+    line-height: 1.5;
+
+    kbd {
+      @include truncate(100%);
+      font-family: $sans;
+    }
+  }
+
+  .committer {
+
+  }
+}
+
+.slide-menu {
+  padding: 1em;
+  background-color: #333;
+}
+
+.slide-pusher {
+  box-shadow: rgba(#000, .4) -2px 0 30px;
+}
+
+/* countdown */
+.track {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.thumb {
+  display: inline-block;
+  height: 3px;
+  background-color: #fff;
+}
+
+.indicator {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin: $lineheight / 4 0 0;
+}
