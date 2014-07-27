@@ -286,6 +286,24 @@ time {
   }
 }
 
+.latest-commits {
+  position: relative;
+
+  .list {
+    height: 300px;
+    overflow: scroll;
+  }
+}
+
+#commits + .gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-image: -webkit-linear-gradient(top, transparent, $background 90%)
+}
+
 .slide-menu {
   padding: 1em;
   background-color: #333;

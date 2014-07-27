@@ -49,15 +49,22 @@ var Commits = (function() {
   }
 
   return {
-    run: function() {
-      this.fb = new Firebase("https://wowhack.firebaseio.com/commits")
-      this.fb.on('child_added', this.render.bind(this))
+    run: function(limit) {
+      this._limit = (limit || this._limit) || 8
+      this._fb = new Firebase("https://wowhack.firebaseio.com/commits")
+
+      this._fb.limit(this._limit).on('child_added', this.render.bind(this))
 
       return Object.create(this)
     },
 
     templateString: function(content) {
       this.template = compile(content)
+      return this
+    },
+
+    limit: function(limit) {
+      this._limit = limit
       return this
     },
 
