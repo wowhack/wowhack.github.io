@@ -85,8 +85,8 @@ $(function() {
   var $time = $("#timeleft")
 
   Counter
-    .from(new Date(2014, 7, 5, 11))
-    .until(new Date(2014, 7, 6, 17))
+    .from(new Date(2014, 7, 5, 11, 30))
+    .until(new Date(2014, 7, 6, 15))
     .setElement("#counter")
     .tick(function(timespan) {
       var hours = timespan.hours,
