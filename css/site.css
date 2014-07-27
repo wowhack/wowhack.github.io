@@ -1008,6 +1008,14 @@ h2 {
   letter-spacing: 2px;
   margin-bottom: 1em; }
 
+.notice {
+  font-size: 0.77778em;
+  text-transform: none;
+  letter-spacing: 0; }
+
+.muted {
+  color: #9e0051; }
+
 [role="banner"] {
   padding: 0.9em 0 0;
   margin-bottom: 0.9em; }
@@ -1085,10 +1093,10 @@ a {
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   color: #fff;
-  position: relative;
+  display: inline-block;
   transition: border-color 0.2s; }
   a:active {
-    top: 1px; }
+    transform: scale(0.98); }
   a:hover {
     border-color: #fff; }
 
@@ -1202,3 +1210,23 @@ time {
   font-weight: bold;
   text-align: center;
   margin: 0.45em 0 0; }
+
+.sponsors {
+  margin-top: 1.8em; }
+  .sponsors .notice {
+    text-align: center; }
+  .sponsors a {
+    display: block;
+    margin-bottom: 1.8em;
+    border: 0;
+    text-align: center; }
+    .sponsors a:active {
+      top: auto;
+      transform: scale(0.9); }
+  .sponsors img {
+    display: inline;
+    max-width: 60%; }
+    .sponsors img.square {
+      max-height: 80px; }
+  .sponsors img:not(.square) {
+    max-height: 30px; }

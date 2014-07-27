@@ -77,6 +77,16 @@ h2 {
   margin-bottom: 1em;
 }
 
+.notice {
+  font-size: to_em(14);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.muted {
+  color: darken($background, 13%);
+}
+
 [role="banner"] {
   padding: $lineheight / 2 0 0;
   margin-bottom: $lineheight / 2;
@@ -190,11 +200,11 @@ a {
   text-decoration: none;
   border-bottom: 1px solid rgba(#fff, .6);
   color: #fff;
-  position: relative;
+  display: inline-block;
   transition: border-color .2s;
 
   &:active {
-    top: 1px;
+    transform: scale(.98);
   }
   &:hover {
     border-color: #fff;
@@ -331,4 +341,37 @@ time {
   font-weight: bold;
   text-align: center;
   margin: $lineheight / 4 0 0;
+}
+
+.sponsors {
+  margin-top: $lineheight;
+
+  .notice {
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    margin-bottom: $lineheight;
+    border: 0;
+    text-align: center;
+
+    &:active {
+      top: auto;
+      transform: scale(.9);
+    }
+  }
+
+  img {
+    display: inline;
+    max-width: 60%;
+
+    &.square {
+      max-height: 80px;
+    }
+  }
+
+  img:not(.square) {
+    max-height: 30px;
+  }
 }
