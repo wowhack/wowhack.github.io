@@ -1078,8 +1078,14 @@ section > h1 {
   [role="article"] .content {
     font-size: 0.88889em; }
 
-.list, .schedule-list, .checklist {
+.list, .horizontal-list, .schedule-list, .checklist {
   list-style: none; }
+
+.horizontal-list li {
+  display: inline; }
+
+.comma-separated li:not(:last-child)::after {
+  content: ', '; }
 
 .schedule-list:not(:last-child) {
   margin-bottom: 0.9em; }
@@ -1180,7 +1186,7 @@ time {
 
 .latest-commits {
   position: relative; }
-  .latest-commits .list, .latest-commits .schedule-list, .latest-commits .checklist {
+  .latest-commits .list, .latest-commits .horizontal-list, .latest-commits .schedule-list, .latest-commits .checklist {
     height: 300px;
     overflow: scroll; }
 
@@ -1194,8 +1200,11 @@ time {
 
 [role="complementary"] {
   padding: 1em;
+  font-size: 0.9em;
   background: #303030 url("../images/pattern.svg");
   text-shadow: rgba(0, 0, 0, 0.8) 0 1px 2px; }
+  [role="complementary"] h2:not(:first-of-type) {
+    margin-top: 1.8em; }
 
 .slide-pusher {
   box-shadow: rgba(0, 0, 0, 0.5) -4px 0 30px; }
