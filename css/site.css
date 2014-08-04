@@ -1051,13 +1051,29 @@ section > h1 {
 
 [role="article"] {
   position: relative;
-  margin-bottom: 1.8em; }
+  margin-bottom: 1.8em;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+  padding: 1em 2em;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px; }
+  [role="article"] h2 {
+    font-family: Monaco, Courier, monospaced;
+    text-transform: none;
+    letter-spacing: 0; }
+  [role="article"] a {
+    color: #c70067;
+    font-weight: 600;
+    border: 0; }
+    [role="article"] a:hover {
+      text-decoration: underline; }
   [role="article"] time[pubdate] {
     position: absolute;
-    top: 0;
-    right: 0; }
+    top: 1em;
+    right: 1em; }
   [role="article"] .content {
-    font-size: 0.88889em; }
+    font-size: 0.88889em;
+    font-weight: normal; }
 
 .list, .horizontal-list, .schedule-list, .checklist {
   list-style: none; }
