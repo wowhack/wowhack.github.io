@@ -1078,8 +1078,16 @@ section > h1 {
   [role="article"] .content {
     font-size: 0.88889em; }
 
-.list {
+.list, .schedule-list, .checklist {
   list-style: none; }
+
+.schedule-list:not(:last-child) {
+  margin-bottom: 0.9em; }
+.schedule-list time {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 40px;
+  font-weight: normal; }
 
 .badge, .bubble {
   background-color: #fff;
@@ -1130,26 +1138,23 @@ time {
     opacity: 1;
     transform: translate(0, 0); }
 
-.checklist {
-  list-style: none;
-  font-size: 0.9em; }
-  .checklist li::before {
-    font-family: 'entypo';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    font-size: 30px;
-    line-height: 1;
-    content: '✓';
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-right: 10px;
-    display: inline-block;
-    position: relative;
-    top: 1px; }
+.checklist li::before {
+  font-family: 'entypo';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 30px;
+  line-height: 1;
+  content: '✓';
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+  top: 1px; }
 
 #commits li {
   -webkit-animation: animation 1000ms linear both;
@@ -1175,7 +1180,7 @@ time {
 
 .latest-commits {
   position: relative; }
-  .latest-commits .list {
+  .latest-commits .list, .latest-commits .schedule-list, .latest-commits .checklist {
     height: 300px;
     overflow: scroll; }
 
@@ -1214,6 +1219,9 @@ time {
   font-weight: bold;
   text-align: center;
   margin: 0.45em 0 0; }
+
+.secondary-info ul, .secondary-info ol, .secondary-info p {
+  font-size: 0.9em; }
 
 .sponsors {
   margin-top: 1.8em; }

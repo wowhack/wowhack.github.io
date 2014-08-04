@@ -184,6 +184,21 @@ section > h1 {
   list-style: none;
 }
 
+.schedule-list {
+  @extend .list;
+
+  &:not(:last-child) {
+    margin-bottom: $lineheight / 2;
+  }
+
+  time {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 40px;
+    font-weight: normal;
+  }
+}
+
 .badge {
   background-color: #fff;
   color: darken($background, 10%);
@@ -248,8 +263,7 @@ time {
 }
 
 .checklist {
-  list-style: none;
-  font-size: .9em;
+  @extend .list;
 
   li::before {
     @include icon('✓');
@@ -342,6 +356,12 @@ time {
   font-weight: bold;
   text-align: center;
   margin: $lineheight / 4 0 0;
+}
+
+.secondary-info {
+  ul, ol, p {
+    font-size: .9em;
+  }
 }
 
 .sponsors {
