@@ -36,8 +36,9 @@ var Commits = (function() {
     }
 
     function parseTeam(commitUrl) {
-      var repoRegex = /https:\/\/github.com\/wowhack\/(\w+)\//
-      return commitUrl.match(repoRegex, 'g')[1]
+      var repoRegex = /https:\/\/github.com\/wowhack\/([\w.]+)\//,
+          res = commitUrl.match(repoRegex, 'g')
+      return res && res[1]
     }
 
     return extend({}, json, {
