@@ -1,13 +1,14 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     watch = require('gulp-watch')
-
+    minify = require('gulp-minify-css')
 
 var buildSass = function() {
   gulp.src('stylesheets/*.scss')
       .pipe(sass({
         outputStyle: 'compressed'
       }))
+      .pipe(minify({ cache: true }))
       .pipe(gulp.dest('./css'))
 }
 
