@@ -122,10 +122,6 @@ h2 {
   }
 }
 
-[role="complementary"] {
-
-}
-
 #toggle-menu {
   -webkit-appearance: none;
   border: 1px solid rgba(#fff, .5);
@@ -150,6 +146,7 @@ h2 {
   }
 
   &:active,
+  &:focus,
   &.active {
     background-color: #fff;
     color: darken($background, 5%);
@@ -314,13 +311,17 @@ time {
   background-image: -webkit-linear-gradient(top, transparent, $background 90%)
 }
 
-.slide-menu {
+[role="complementary"] {
   padding: 1em;
-  background-color: #333;
+  background: #303030 url("../images/pattern.svg");
+  text-shadow: rgba(#000, .8) 0 1px 2px;
 }
 
 .slide-pusher {
-  box-shadow: rgba(#000, .4) -2px 0 30px;
+  box-shadow: rgba(#000, .5) -4px 0 30px;
+}
+.slide-open .slide-pusher {
+  border-left: 1px solid rgba(#fff, .3);
 }
 
 /* countdown */

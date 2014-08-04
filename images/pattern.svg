@@ -1,13 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="30">
-  <defs>
-  <rect id="r" width="30" height="15" fill="#FB2B13" stroke-width="2.5" stroke="#C40E00"></rect>
-  <g id="p">
-  <use xlink:href="#r"></use>
-  <use y="15" xlink:href="#r"></use>
-  <use y="30" xlink:href="#r"></use>
-  <use y="45" xlink:href="#r"></use>
-  </g>
-  </defs>
-  <use xlink:href="#p" transform="translate(0 -25) skewY(40)"></use>
-  <use xlink:href="#p" transform="translate(30 0) skewY(-40)"></use>
+<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'>
+  <rect width='50' height='50' fill='#252525'/>
+  <circle cx='3' cy='4.3' r='1.8' fill='#393939'/>
+  <circle cx='3' cy='3' r='1.8' fill='#111'/>
+  <circle cx='10.5' cy='12.5' r='1.8' fill='#393939'/>
+  <circle cx='10.5' cy='11.3' r='1.8' fill='#111'/>
 </svg>
