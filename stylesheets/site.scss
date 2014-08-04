@@ -474,3 +474,10 @@ button {
   margin-right: 20px;
   padding: 0;
 }
+
+[role="contentinfo"] {
+  text-align: center;
+  font-size: .8em;
+  color: rgba(#fff, .8);
+  cursor: default;
+}
