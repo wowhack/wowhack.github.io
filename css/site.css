@@ -993,7 +993,7 @@ img {
   height: auto; }
 
 p {
-  margin: 0 0 0.45em; }
+  margin: 0 0 0.9em; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -1035,28 +1035,6 @@ h2 {
     vertical-align: middle; }
   [role="banner"] a {
     border: 0; }
-
-#toggle-menu {
-  -webkit-appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: none;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 50px;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  border-radius: 5px;
-  margin-right: 20px;
-  cursor: pointer;
-  transition: all 0.2s; }
-  #toggle-menu:hover {
-    color: #fff;
-    border-color: #fff; }
-  #toggle-menu:active, #toggle-menu:focus {
-    outline: 0; }
-  #toggle-menu:active, #toggle-menu:focus, #toggle-menu.active {
-    background-color: #fff;
-    color: #c70067; }
 
 dt {
   font-weight: normal; }
@@ -1251,3 +1229,46 @@ time {
       max-height: 80px; }
   .sponsors img:not(.square) {
     max-height: 30px; }
+
+/* Buttons */
+.btn, button {
+  display: inline-block;
+  -webkit-appearance: none;
+  border-radius: 2em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 3px 1em;
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.2s; }
+  .btn.full-width, button.full-width {
+    width: 100%; }
+  .btn img, button img {
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 20px;
+    top: -2px;
+    position: relative;
+    margin-right: 5px; }
+  .btn .icon, button .icon {
+    position: relative;
+    top: 1px; }
+  .btn:hover, button:hover {
+    color: #fff;
+    border-color: #fff; }
+  .btn:active, .btn:focus, button:active, button:focus {
+    outline: 0; }
+  .btn:active, .btn:focus, .btn.active, button:active, button:focus, button.active {
+    background-color: #fff;
+    color: #c70067; }
+
+#toggle-menu {
+  font-size: 50px;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 0; }

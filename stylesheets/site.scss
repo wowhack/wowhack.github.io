@@ -58,7 +58,7 @@ img {
 }
 
 p {
-  margin: 0 0 $lineheight / 4;
+  margin: 0 0 $lineheight / 2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,37 +119,6 @@ h2 {
 
   a {
     border: 0;
-  }
-}
-
-#toggle-menu {
-  -webkit-appearance: none;
-  border: 1px solid rgba(#fff, .5);
-  background: none;
-  color: rgba(#fff, .9);
-  font-size: 50px;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  border-radius: 5px;
-  margin-right: 20px;
-  cursor: pointer;
-  transition: all .2s;
-
-  &:hover {
-    color: #fff;
-    border-color: #fff;
-  }
-
-  &:active, &:focus {
-    outline: 0;
-  }
-
-  &:active,
-  &:focus,
-  &.active {
-    background-color: #fff;
-    color: darken($background, 5%);
   }
 }
 
@@ -414,4 +383,65 @@ time {
   img:not(.square) {
     max-height: 30px;
   }
+}
+
+/* Buttons */
+.btn,
+button {
+  display: inline-block;
+  -webkit-appearance: none;
+
+  border-radius: 2em;
+  border: 1px solid rgba(#fff, .5);
+  color: #fff;
+  text-align: center;
+  padding: 3px 1em;
+  background: none;
+  color: rgba(#fff, .9);
+  cursor: pointer;
+  transition: all .2s;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  img {
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 20px;
+    top: -2px;
+    position: relative;
+    margin-right: 5px;
+  }
+
+  .icon {
+    position: relative;
+    top: 1px;
+  }
+
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  &:active, &:focus {
+    outline: 0;
+  }
+
+  &:active,
+  &:focus,
+  &.active {
+    background-color: #fff;
+    color: darken($background, 5%);
+  }
+}
+
+#toggle-menu {
+  font-size: 50px;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 0;
 }
