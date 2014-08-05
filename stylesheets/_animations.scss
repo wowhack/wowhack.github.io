@@ -1,3 +1,22 @@
+@-webkit-keyframes pulseDanger {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .3;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 $scale: 1.5;
 
 @-webkit-keyframes pulse {

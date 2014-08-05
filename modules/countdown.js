@@ -5,6 +5,8 @@ var Counter = (function() {
 
   return {
 
+    _customTicks: [],
+
     _units: countdown.HOURS | countdown.MINUTES | countdown.SECONDS,
 
     from: function(date) {
@@ -28,7 +30,7 @@ var Counter = (function() {
     },
 
     tick: function(cb) {
-      this._customTick = cb
+      this._customTicks.push(cb)
       return this
     },
 
@@ -42,7 +44,10 @@ var Counter = (function() {
     _tick: function() {
       var span = countdown(null, this.until, this._units)
       this._draw(span)
-      this._customTick && this._customTick.call(this, span)
+
+      this._customTicks.forEach(function(fn) {
+        fn.call(this, span)
+      }.bind(this))
       return span
     },
 
@@ -99,6 +104,15 @@ $(function() {
 
       timeString = res[0]+":"+res[1]+":"+res[2]
       $time.text(timeString)
+    })
+    .tick(function() {
+      // check if time is 12.00
+      var now = new Date(),
+          dangerZone = new Date(2014, 7, 6, 12)
+
+      if(now >= dangerZone && !$("html").hasClass("danger")) {
+        $("html").addClass("danger")
+      }
     })
     .done(function() {
       console.log("DONE")

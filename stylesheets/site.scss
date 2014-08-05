@@ -33,7 +33,6 @@ $mono: Monaco, Courier, monospaced;
 
 
 html {
-  background: $background;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
 }
@@ -47,6 +46,20 @@ body {
 .wrapper {
   background-color: $background;
   padding: 1% 3% $lineheight;
+}
+html.danger .wrapper {
+  &::after {
+    opacity: 0;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: red;
+    -webkit-animation: pulseDanger 2s infinite ease-in-out;
+  }
 }
 
 aside > section {
