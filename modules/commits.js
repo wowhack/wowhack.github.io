@@ -53,11 +53,17 @@ var Commits = (function() {
   }
 
   return {
+
+    setFirebase: function (fb) {
+      this._fb = fb
+      return this
+    },
+
     run: function(limit) {
       this._limit = (limit || this._limit) || 8
-      this._fb = new Firebase("https://wowhack.firebaseio.com/commits")
 
-      this._fb.limit(this._limit).on('child_added', this.render.bind(this))
+      this._fb.limit(this._limit)
+        .on('child_added', this.render.bind(this))
 
       return Object.create(this)
     },
@@ -92,11 +98,53 @@ var Commits = (function() {
   }
 })()
 
+var CommitsCounter = (function () {
+
+
+  var increaseCounter = function () {
+
+    this.$el
+      .text(this._counter++)
+
+    return this
+  }
+
+  return {
+
+    setFirebase: function (fb) {
+      this._fb = fb
+      return this
+    },
+
+    setElement: function (selector) {
+      this.$el = $(selector)
+      return this
+    },
+
+    run: function () {
+      this._counter = 0
+
+      this._fb
+        .on('child_added', increaseCounter.bind(this))
+
+      return Object.create(this)
+    }
+  }
+}())
+
 $(function() {
 
+  var fireBase = new Firebase("https://wowhack.firebaseio.com/commits")
+
   Commits
+    .setFirebase(fireBase)
     .setElement('#commits')
     .limit(15)
     .templateString($("#commit-template").html())
+    .run()
+
+  CommitsCounter
+    .setFirebase(fireBase)
+    .setElement('#commit-counter')
     .run()
 })
