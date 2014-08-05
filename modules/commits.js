@@ -90,6 +90,7 @@ $(function() {
 
   Commits
     .setElement('#commits')
+    .limit(15)
     .templateString($("#commit-template").html())
     .run()
 })
