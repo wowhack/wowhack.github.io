@@ -175,6 +175,13 @@ section > h1 {
 
 .list {
   list-style: none;
+
+  &.detailed {
+    small {
+      margin-left: 5px;
+      color: rgba(#fff, .7);
+    }
+  }
 }
 
 .horizontal-list {
