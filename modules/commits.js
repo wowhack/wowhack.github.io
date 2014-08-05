@@ -48,6 +48,10 @@ var Commits = (function() {
     })
   }
 
+  var commitIsMerge = function(json) {
+    return /^Merge branch/.test(json.message)
+  }
+
   return {
     run: function(limit) {
       this._limit = (limit || this._limit) || 8
@@ -77,6 +81,8 @@ var Commits = (function() {
       if(!this.template) {
         throw "No template provided! Call Commits.templateString with a string"
       }
+
+      if(commitIsMerge(data.val())) return
 
       var json = transformData(data.val())
 
