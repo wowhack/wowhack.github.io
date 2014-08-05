@@ -42,7 +42,7 @@ var Commits = (function() {
     }
 
     return extend({}, json, {
-      by: json.committer.username,
+      by: json.committer.username || json.committer.name,
       date: formatDate(json.timestamp),
       team: parseTeam(json.url)
     })
