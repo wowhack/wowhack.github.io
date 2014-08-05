@@ -161,6 +161,20 @@ section > h1 {
     }
   }
 
+  ul, ol {
+    margin-bottom: $lineheight;
+    margin-left: 1em;
+    list-style: none;
+
+    li::before {
+      @include icon('');
+      color: #aaa;
+      position: relative;
+      top: 3px;
+      margin-right: .5em;
+    }
+  }
+
   time[pubdate] {
     position: absolute;
     top: 1em;
