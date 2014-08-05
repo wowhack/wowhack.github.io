@@ -31,8 +31,7 @@ var Commits = (function() {
   var transformData = function(json) {
     // => HH:MM
     function formatDate(timestamp) {
-      var date = new Date(timestamp)
-      return date.toLocaleTimeString().match(/\d{2}:\d{2}/, 'g')[0]
+      return timestamp.match(/T(\d{2}:\d{2})/)[1]
     }
 
     function parseTeam(commitUrl) {
