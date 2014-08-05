@@ -1,3 +1,38 @@
+$scale: 1.5;
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY($scale);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scaleY(1);
+  }
+  50% {
+    -moz-transform: scaleY($scale);
+  }
+  100% {
+    -moz-transform: scaleY(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY($scale);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 
 /* Generated with Bounce.js. Edit at http://goo.gl/aPQhVQ */
 

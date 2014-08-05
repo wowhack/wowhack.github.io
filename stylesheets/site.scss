@@ -389,8 +389,12 @@ time {
 
 .thumb {
   display: inline-block;
+  border-radius: 10px;
   height: 3px;
   background-color: #fff;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  box-shadow: rgba(#fff, .9) 0 0 6px;
 }
 
 .indicator {
