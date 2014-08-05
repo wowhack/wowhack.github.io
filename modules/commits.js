@@ -43,7 +43,6 @@ var Commits = (function() {
 
     return extend({}, json, {
       by: json.committer.username,
-      filesChanged: json.modified.length,
       date: formatDate(json.timestamp),
       team: parseTeam(json.url)
     })
