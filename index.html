@@ -495,6 +495,15 @@ Be sure to bookmark this page and check it for updates during the hack. Useful i
       </li>
     </script>
 
+    <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+    <script>
+      var socket = io('http://wowhack-pusher.nodejitsu.com')
+
+      socket.on('refresh', function() {
+        location.reload()
+      })
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
     <script src="vendor/countdown.min.js"></script>
