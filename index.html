@@ -500,7 +500,9 @@ Be sure to bookmark this page and check it for updates during the hack. Useful i
       var socket = io('http://wowhack-pusher.nodejitsu.com')
 
       socket.on('refresh', function() {
-        location.reload()
+        setTimeout(function() {
+          location.reload()
+        }, 5000)
       })
     </script>
 
