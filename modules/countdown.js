@@ -115,10 +115,7 @@ $(function() {
       }
     })
     .done(function() {
-      $("html").addClass("done")
-      setTimeout(function() {
-        $(".overlay").addClass("show")
-      }, 3000)
+      
     })
     .run()
 })
