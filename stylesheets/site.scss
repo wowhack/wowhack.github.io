@@ -524,3 +524,43 @@ button {
   color: rgba(#fff, .8);
   cursor: default;
 }
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding-top: 200px;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    -webkit-animation: animation 2s both;
+  }
+
+  h1 {
+    font-family: Pacifico;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: 5em;
+    text-transform: none;
+  }
+
+  .icon {
+    font-size: 11em;
+    line-height: 100px;
+  }
+}
+
+.done {
+  .animate {
+    -webkit-animation: drop 4s 1s ease-in both;
+  }
+
+  .animate-right {
+    -webkit-animation: dropRight 4s 1s ease-in both;
+  }
+}

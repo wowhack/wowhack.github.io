@@ -115,7 +115,10 @@ $(function() {
       }
     })
     .done(function() {
-      console.log("DONE")
+      $("html").addClass("done")
+      setTimeout(function() {
+        $(".overlay").addClass("show")
+      }, 3000)
     })
     .run()
 })

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Dashboard | Spotify Way Out West Hackathon 2014</title>
     <link rel="icon" href="images/favicon.png" />
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/site.css" />
   </head>
   <body class="slide-container">
@@ -44,23 +44,23 @@
       <div class="slide-content wrapper">
         <header role="banner">
           <div class="grid grid--middle">
-            <div class="grid__item one-quarter">
+            <div class="grid__item one-quarter animate">
               <button id="toggle-menu" class="icon">☰</button>
               <a target="_blank" title="#wowhack2014" href="https://twitter.com/search?q=%23wowhack2014">
                 <img src="images/wowhack.svg" alt="#wowhack2014" width="185" />
               </a>
             </div><!--
-            --><div class="grid__item one-half">
+            --><div class="grid__item one-half animate">
               <h1>Dashboard</h1>
             </div><!--
-            --><div class="grid__item one-quarter">
+            --><div class="grid__item one-quarter animate-right">
               <a target="_blank" title="Spotify" href="http://spotify.com">
                 <img src="images/spotify.svg" alt="Spotify" width="127" />
               </a>
             </div>
           </div>
 
-          <div rel="tooltip" title="Time left for hacking" class="track">
+          <div rel="tooltip" title="Time left for hacking" class="track animate">
             <div id="counter" class="thumb"></div>
             <time title="Time left for hacking" id="timeleft" class="indicator"></time>
           </div>
@@ -70,14 +70,14 @@
 
           <aside class="secondary-info grid__item one-quarter">
 
-            <section>
+            <section class="animate-right">
               <h1>Jour phone</h1>
               <p>
                 For urgent problems: <strong>070-657 42 58</strong>
               </p>
             </section>
 
-            <section>
+            <section class="animate">
               <h1><i class="icon">📶</i> WiFi Access</h1>
               <dl>
                 <dt>SSID</dt>
@@ -87,7 +87,7 @@
               </dl>
             </section>
 
-            <section>
+            <section class="animate-right">
               <h1><i class="icon"></i> Checklist</h1>
 
               <ul class="checklist">
@@ -99,7 +99,7 @@
               </ul>
             </section>
 
-            <section>
+            <section class="animate">
               <h1><i class="icon">🕔</i> Schedule</h1>
 
               <h2>Wednesday</h2>
@@ -118,10 +118,10 @@
             </section>
           </aside><!--
 
-          --><section class="grid__item one-half">
+          --><section class="grid__item one-half animate">
             <h1>Notices</h1>
 
-            <article role="article">
+            <article role="article" class="animate-right">
               <h2>Presentation Order</h2>
               <time datetime="20140806T12:42" title="2014-08-06, 12:42" pubdate>12:42</time>
               <div class="content">
@@ -160,7 +160,7 @@
               </ul>
             </article>
 
-            <article role="article">
+            <article role="article" class="animate">
               <h2>Dashboard Auto-refresh</h2>
               <time datetime="20140806T12:05" title="2014-08-06, 12:05" pubdate>12:05</time>
               <div class="content">
@@ -502,13 +502,13 @@ Be sure to bookmark this page and check it for updates during the hack. Useful i
           </section><!--
 
           --><div class="grid__item one-quarter">
-            <section>
+            <section class="animate">
               <p><a class="btn full-width" target="_blank" href="http://open.spotify.com/user/wowhack/playlist/125Fk4eSxRseQmuSeA6oZ5"><img src="images/spotify-logo.svg" /> Official Playlist <i class="icon"></i></a></p>
 
               <iframe src="https://embed.spotify.com/?uri=spotify:user:wowhack:playlist:125Fk4eSxRseQmuSeA6oZ5" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 
             </section>
-            <section class="latest-commits">
+            <section class="latest-commits animate">
               <h1><i class="icon">🕩</i> Latest commits <small>(<span id="commit-counter">...</span>)</small></h1>
               <ul id="commits" class="list"></ul>
               <div class="gradient"></div>
@@ -541,6 +541,8 @@ Be sure to bookmark this page and check it for updates during the hack. Useful i
         </footer>
       </div>
     </div>
+
+    <div class="overlay"><i class="icon">🏆</i><h1>Presentations</h1></div>
 
     <script id="commit-template" type="text/html">
       <li>

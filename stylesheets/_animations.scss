@@ -1,3 +1,25 @@
+@mixin drop($rotation1: 90deg, $rotation2: 120deg) {
+  30% {
+    -webkit-transform: translate(0, 2000%) rotate($rotation1);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translate(0, 2000%) rotate($rotation2);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes drop {
+  @include drop;
+}
+@-webkit-keyframes dropRight {
+  @include drop(-90deg, 45deg);
+}
+
 @-webkit-keyframes pulseDanger {
   0% {
     opacity: 0;
