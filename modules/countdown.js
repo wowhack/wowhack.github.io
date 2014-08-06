@@ -108,7 +108,7 @@ $(function() {
     .tick(function() {
       // check if time is 12.00
       var now = new Date(),
-          dangerZone = new Date(2014, 7, 6, 12)
+          dangerZone = new Date(2014, 7, 6, 13)
 
       if(now >= dangerZone && !$("html").hasClass("danger")) {
         $("html").addClass("danger")
