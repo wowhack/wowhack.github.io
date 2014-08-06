@@ -29,6 +29,20 @@ var Commits = (function() {
   }
 
   var transformData = function(json) {
+    var tagsToReplace = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;'
+    };
+
+    function replaceTag(tag) {
+      return tagsToReplace[tag] || tag;
+    }
+
+    function safe_tags_replace(str) {
+      return str.replace(/[&<>]/g, replaceTag);
+    }
+
     // => HH:MM
     function formatDate(timestamp) {
       return timestamp.match(/T(\d{2}:\d{2})/)[1]
@@ -40,7 +54,16 @@ var Commits = (function() {
       return res && res[1]
     }
 
+    var message = json.message
+
+    if(/<script>(.+)<\/script>/.test(json.message)) {
+      message = "*** Look, I'm a script kiddie, tihi! ***"
+    }
+
+    message = safe_tags_replace(message)
+
     return extend({}, json, {
+      message: message,
       by: json.committer.username || json.committer.name,
       date: formatDate(json.timestamp),
       team: parseTeam(json.url)
