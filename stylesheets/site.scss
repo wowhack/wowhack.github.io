@@ -49,6 +49,7 @@ body {
 }
 html.danger .wrapper {
   &::after {
+    pointer-events: none;
     opacity: 0;
     display: block;
     content: "";
